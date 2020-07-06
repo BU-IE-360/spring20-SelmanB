@@ -297,6 +297,8 @@ for(i in 1:8){
 
 
 ### Modelling 
+Automated selection of regressors was pursued before building a hybrid regression model containing AR components. Initially, a linear model including all possible regressors was calculated and only the regressors having a p-value greater than a threshold were chosen. This required only O(1) models to be built. The next approach was to eliminate the unsignificant regressors one by one as per the common stepwise scenario, building O(n) models in total. This was found to be computationally feasible and subsequently employed as described below. Other more precise approaches with computational complexities greater than linear were discussed and found to be realistically infeasible.
+
 Approaches that are improved till here were for creating a linear model. After using all, intercept was removed. Here, a while loop checks p values of results of approaches. Until every regressor has a p value less than 0.05 while loop works. One by one, linearly they are removed by beginning with the highest p value. The purpose of using stepwise regressor elimination instead of more complex regressor elimination methods is the fact that it would not be cost effective to consturct 16 different models. Finally, last model developed is returned. Models were formed for both xdata and xdata_lag. Models are built by lapply function.
 ```{r, warning=FALSE , message=FALSE}
 predict<-rep(0,8)
