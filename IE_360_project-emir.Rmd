@@ -256,7 +256,7 @@ for(i in 1:8){
 
 
 ### Predictor Filling  
-Estimating today’s sales numbers from the data of the two days before was another idea. xdata_lag list was created for that purpose. To be used before predicting regressors, from the data of two days before, sold_count data of the today was tried to predict.
+In order to avoid bias due to having data of the current day for the training data and two days prior for prediction, estimating today’s sales numbers from the data of the two days before was another idea. xdata_lag list was created for that purpose. To be used before predicting regressors, from the data of two days before, sold_count data of the today was tried to predict.
 ```{r, warning=FALSE , message=FALSE}
 xdata_lag <- list()
 for(i in 1:8){
