@@ -267,7 +267,9 @@ for(i in 1:8){
 
 
 ### Alternative Regressors 
-Another approach was the importance of the last 3 weeks’ weekly data for each day. So this approach was for the last 22 days. sold_count data of 7 days before, 14 days before and 21 days before were added for each product everyday. This step was applied both to xdata and xdata_lag. If effectiveness of that approach is not satisfying, in the loop which was written to create a linear model, it was not going to be used.Output of the part until this point and output of the continuing part were compared and according to observations more dependable one submitted.
+Qualitative inspection of partial and conventional autocorrelation functions exhibited possibility of ARIMA modelling, especially with weekly seasonality. In order to incorporate ARIMA terms in the combined model, lagged regressors are incorporated to the data. Merging of these AR regressors and other regressors was accomplished not by averaging or combining their results but building a model that is optimized including all these regressors. This has the advantage of being able to capture more correlations in exchange of reduced robustness. Therefore no library functions for ARIMA modelling is not used.
+
+So this approach was for the last 22 days. sold_count data of 7 days before, 14 days before and 21 days before were added for each product everyday. This step was applied both to xdata and xdata_lag. If effectiveness of that approach is not satisfying, in the loop which was written to create a linear model, it was not going to be used.Output of the part until this point and output of the continuing part were compared and according to observations more dependable one submitted.
 ```{r,  warning=FALSE , message=FALSE}
   oneweek<-xts(NA,Sys.Date())
 twoweeks<-xts(NA,Sys.Date())
