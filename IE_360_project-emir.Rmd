@@ -353,7 +353,6 @@ predict[3] <- predict_old[3]
 predict[5] <- predict_old[5]
 ``` 
 
-
 ## Results & Conclusion
 It is determined that while automatization of model building reduces human labor put into the task, it yielded inferior results compared to hand-tuned model-building parameters. Taking into account the facts that it would be impossible to manually build models for a large set of such independent systems, and also that even most manual models need computer optimization to be successful; an efficient hybridization of the two approaches should be maintained. This study here was rather on the over-automated side of the spectrums. Yet, it is beneficial in the long term to try to automatize the workflow as much as possible, due to advances in computing capabilities.
 
